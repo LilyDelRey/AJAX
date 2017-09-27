@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AJAX</title>
+</head>
+<body>
+
+
+
+<button id="button"> Get Text file  </button>
+<script>
+document.getElementById('button').addEventListener('click',loadtext);
+function loadtext(){
+
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open('GET', 'sample.txt', true);
+    this.onload=function(){
+       if (xhr.status==200){
+        console.log(this.responseText);
+    }
+  }
+  xhr.send();
+}
+
+</script>
+</body>
+</html>
